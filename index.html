@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="App">
+<head>
+	<meta charset="UTF-8">
+	<title>Accordion</title>
+	<style>
+		.accordion dt {
+			cursor: pointer;
+		}
+		.open {
+			border: 0;
+			border-left: 2px solid green;
+		}
+		.closed {
+			border: 0;
+			border-left: 2px solid red;
+		}
+		.hidden {
+			display: none;
+		}
+	</style>
+</head>
+<body>
+	<dl accordion mode="first" class="accordion">
+		<dt>A title</dt>
+			<dd>A description</dd>
+		<dt>A title 2</dt>
+			<dd>A description 2</dd>
+		<dt>A title 3</dt>
+			<dd>A description 3</dd>
+		<dt>A title 4</dt>
+			<dd>A description 4</dd>
+		<dt>A title 5</dt>
+			<dd>A description 5</dd>
+	</dl>
+	
+	<script src="./bower_components/angular/angular.js"></script>
+	<script src="./accordion.directive.js"></script>
+	<script src="./app.js"></script>
+</body>
+</html>
