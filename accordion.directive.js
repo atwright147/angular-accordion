@@ -67,6 +67,7 @@ angular.module('accordion').directive('accordion', function() {
 
 			allDt.on('click', function(e) {
 				var _title = angular.element(this);
+				_title.toggleClass(classOpen+' '+classClosed);
 				_title.next().toggleClass('hidden');
 				e.preventDefault();
 			});
