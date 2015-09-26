@@ -2,7 +2,7 @@
 <html lang="en" ng-app="App">
 <head>
 	<meta charset="UTF-8">
-	<title>Accordion</title>
+	<title>Accordion Demo</title>
 	<style>
 		.accordion dt {
 			cursor: pointer;
@@ -21,17 +21,39 @@
 	</style>
 </head>
 <body>
+	<h1>Accordion Demo</h1>
+
+	<h2>Mode: "first"</h2>
 	<dl accordion mode="first" class="accordion">
-		<dt>A title</dt>
-			<dd>A description</dd>
+		<dt>A title 1</dt>
+			<dd>A description 1</dd>
 		<dt>A title 2</dt>
 			<dd>A description 2</dd>
 		<dt>A title 3</dt>
 			<dd>A description 3</dd>
-		<dt>A title 4</dt>
-			<dd>A description 4</dd>
-		<dt>A title 5</dt>
-			<dd>A description 5</dd>
+	</dl>
+	<hr>
+
+	<h2>Mode: "hash"</h2>
+	<a href="#hashdemo">Click to set up hash demo.</a>
+	<dl accordion mode="hash" class="accordion">
+		<dt>A title 1</dt>
+			<dd>A description 1</dd>
+		<dt>A title 2</dt>
+			<dd>A description 2</dd>
+		<dt class="hashdemo">A title 3</dt>
+			<dd>A description 3</dd>
+	</dl>
+	<hr>
+	
+	<h2>Mode: "class"</h2>
+	<dl accordion mode="class" class="accordion">
+		<dt>A title 1</dt>
+			<dd>A description 1</dd>
+		<dt class="open">A title 2</dt>
+			<dd>A description 2</dd>
+		<dt>A title 3</dt>
+			<dd>A description 3</dd>
 	</dl>
 	
 	<script src="./bower_components/angular/angular.js"></script>
