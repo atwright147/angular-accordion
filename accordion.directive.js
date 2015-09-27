@@ -36,11 +36,11 @@ angular.module('accordion').directive('accordion', function() {
 				switch(attrs.mode) {
 					case 'hash':
 						urlHash = location.hash.replace('#', '');
-						if (!_title.hasClass(urlHash)) {
-		 					_desc.addClass('hidden');
-							_title.removeClass(classOpen).addClass(classClosed);
+						if (urlHash && _title.hasClass(urlHash)) {
+							_title.removeClass(classClosed).addClass(classOpen);
 						} else {
 							_title.addClass(classClosed).removeClass(classOpen);
+		 					_desc.addClass('hidden');
 						}
 						break;
 
