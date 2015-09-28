@@ -44,6 +44,7 @@ angular.module('accordion').directive('accordion', function() {
 						}
 						break;
 
+					case 'solo':
 					case 'first':
 						if (!index) {
 							_desc.removeClass('hidden');
@@ -66,6 +67,10 @@ angular.module('accordion').directive('accordion', function() {
 			});
 
 			allDt.on('click', function(e) {
+				if (attrs.mode === 'solo') {
+					allDt.addClass('closed').removeClass('open');
+					allDd.addClass('hidden');
+				}
 				var _title = angular.element(this);
 				_title.toggleClass(classOpen+' '+classClosed);
 				_title.next().toggleClass('hidden');
