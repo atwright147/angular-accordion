@@ -4,10 +4,6 @@ describe('Accordion directive', function() {
 		browser.get('http://localhost:8080/');
 	});
 
-	it('should have the right page title', function() {
-		expect(browser.getTitle()).toEqual('Accordion Demo');
-	});
-
 	it('should allow clicking the first <dt>', function() {
 		var dt = element.all(by.tagName('dt')).first();
 		var dd = dt.element(by.xpath('following-sibling::dd[1]'));
