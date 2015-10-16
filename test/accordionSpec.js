@@ -18,12 +18,21 @@ describe('Accordion directive', function() {
 		expect(dd.first().getAttribute('class')).not.toMatch('hidden');
 	});
 
+	it('should change css classes of target <dt> and child <dd> (to "closed" / "hidden") when target <dt> is clicked', function() {
+		// make initial selections
+		var dl = element(by.css('dl[mode="first"]'));
+		var dt = element.all(by.css('dl[mode="first"] dt'));  // will generate an array, so need to use .first()
+		var dd = element.all(by.css('dl[mode="first"] dd'));  // will generate an array, so need to use .first()
+
+		// click the <dt> tag
 		dt.click();
+		
 		// check title class
-		expect(dt.getAttribute('class')).not.toMatch('open');
-		expect(dt.getAttribute('class')).toMatch('closed');
+		expect(dt.first().getAttribute('class')).not.toMatch('open');
+		expect(dt.first().getAttribute('class')).toMatch('closed');
+		
 		// check description class
-		expect(dd.getAttribute('class')).toMatch('hidden');
+		expect(dd.first().getAttribute('class')).toMatch('hidden');
 	});
 
 });
