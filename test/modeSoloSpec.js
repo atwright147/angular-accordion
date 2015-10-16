@@ -34,4 +34,41 @@ describe('Accordion directive in mode "solo"', function() {
 		});
 	});
 
+	it('should only allow one item to be open at a time.', function() {
+		// click the second <dt> tag
+		dt.get(1).click();
+		// check title class
+		expect(dt.get(1).getAttribute('class')).toMatch('open');
+		// check description class
+		expect(dd.get(1).getAttribute('class')).not.toMatch('hidden');
+
+		// check title class
+		expect(dt.get(2).getAttribute('class')).toMatch('closed');
+		// check description class
+		expect(dd.get(2).getAttribute('class')).toMatch('hidden');
+
+		// check title class
+		expect(dt.get(0).getAttribute('class')).toMatch('closed');
+		// check description class
+		expect(dd.get(0).getAttribute('class')).toMatch('hidden');
+
+
+		// click the second <dt> tag
+		dt.get(2).click();
+		// check title class
+		expect(dt.get(2).getAttribute('class')).toMatch('open');
+		// check description class
+		expect(dd.get(2).getAttribute('class')).not.toMatch('hidden');
+
+		// check title class
+		expect(dt.get(1).getAttribute('class')).toMatch('closed');
+		// check description class
+		expect(dd.get(1).getAttribute('class')).toMatch('hidden');
+
+		// check title class
+		expect(dt.get(0).getAttribute('class')).toMatch('closed');
+		// check description class
+		expect(dd.get(0).getAttribute('class')).toMatch('hidden');
+	});
+
 });
