@@ -40,16 +40,32 @@ describe('Accordion directive in mode "first"', function() {
 		expect(dd.get(2).getAttribute('class')).toMatch('hidden');
 	});
 
-	it('should change css classes of target <dt> and child <dd> (to "closed" / "hidden") when target <dt> is clicked.', function() {
-		// click the <dt> tag
+	it('should change css classes of target <dt> and child <dd> to inverse of current when target <dt> is clicked.', function() {
+		// click the first <dt> tag
 		dt.first().click();
-
 		// check title class
 		expect(dt.first().getAttribute('class')).not.toMatch('open');
 		expect(dt.first().getAttribute('class')).toMatch('closed');
-
 		// check description class
 		expect(dd.first().getAttribute('class')).toMatch('hidden');
+
+
+		// click the second <dt> tag
+		dt.get(1).click();
+		// check title class
+		expect(dt.get(1).getAttribute('class')).not.toMatch('closed');
+		expect(dt.get(1).getAttribute('class')).toMatch('open');
+		// check description class
+		expect(dd.get(1).getAttribute('class')).not.toMatch('hidden');
+
+
+		// click the third <dt> tag
+		dt.get(2).click();
+		// check title class
+		expect(dt.get(2).getAttribute('class')).not.toMatch('closed');
+		expect(dt.get(2).getAttribute('class')).toMatch('open');
+		// check description class
+		expect(dd.get(2).getAttribute('class')).not.toMatch('hidden');
 	});
 
 });
