@@ -4,15 +4,20 @@ describe('Accordion directive', function() {
 		browser.get('http://localhost:8080/');
 	});
 
-	it('should allow clicking the first <dt>', function() {
-		var dt = element.all(by.tagName('dt')).first();
-		var dd = dt.element(by.xpath('following-sibling::dd[1]'));
+	it('should initially set first <dt> & <dl> class to be in open state for dl[mode="first"]', function() {
+		// make initial selections
+		var dl = element(by.css('dl[mode="first"]'));
+		var dt = element.all(by.css('dl[mode="first"] dt'));  // will generate an array, so need to use .first()
+		var dd = element.all(by.css('dl[mode="first"] dd'));  // will generate an array, so need to use .first()
 		
 		// check title class
-		expect(dt.getAttribute('class')).not.toMatch('closed');
-		expect(dt.getAttribute('class')).toMatch('open');
+		expect(dt.first().getAttribute('class')).not.toMatch('closed');
+		expect(dt.first().getAttribute('class')).toMatch('open');
+		
 		// check description class
-		expect(dd.getAttribute('class')).not.toMatch('hidden');
+		expect(dd.first().getAttribute('class')).not.toMatch('hidden');
+	});
+
 		dt.click();
 		// check title class
 		expect(dt.getAttribute('class')).not.toMatch('open');
