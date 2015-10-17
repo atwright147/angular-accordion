@@ -1,0 +1,27 @@
+{
+  "name": "angular-accordion",
+  "version": "1.0.0",
+  "description": "",
+  "main": "accordion.directive.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/atwright147/angular-accordion.git"
+  },
+  "author": "Andy Wright <atwright147@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/atwright147/angular-accordion/issues"
+  },
+  "homepage": "https://github.com/atwright147/angular-accordion#readme",
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-angular-protractor": "0.0.4",
+    "gulp-connect": "^2.2.0"
+  }
+}
