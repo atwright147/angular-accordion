@@ -3,4 +3,4 @@
 *
 * Description
 */
-angular.module('App', ['accordion']);
+angular.module('app', ['accordion']);
