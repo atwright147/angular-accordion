@@ -2,11 +2,11 @@ var gulp = require('gulp'),
 	angularProtractor = require('gulp-angular-protractor'),
  	connect = require('gulp-connect');
  
-gulp.task('protractor', function() {
+gulp.task('e2e', function() {
 	connect.server();
 	return gulp.src(['./src/tests/*.js'])
 		.pipe(angularProtractor({
-			'configFile': 'test/conf.js',
+			'configFile': 'test/protractor.config.js',
 			'args': ['--baseUrl', 'http://127.0.0.1:8000'],
 			'autoStartStopServer': true,
 			'debug': true
@@ -17,4 +17,4 @@ gulp.task('protractor', function() {
 		});
 });
 
-gulp.task('default', ['protractor']);
+gulp.task('default', ['e2e']);
