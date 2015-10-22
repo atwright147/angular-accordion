@@ -32,6 +32,11 @@
 			$scope.$digest();
 		}));
 
+// it('should initially set first <dt> & <dl> class to be in open state.', function() {		
+// it('should initially set second++ <dt>s & <dl>s class to be in closed state.', function() {		
+// it('should change css classes of target <dt> and child <dd> to inverse of current when target <dt> is clicked.', function() {
+
+
 		it('should initialise with first item open and others closed', function () {
 			var dt = el.find('dt');
 			var dd = el.find('dd');
@@ -48,36 +53,5 @@
 			expect(angular.element(dd[2]).hasClass('hidden')).toBe(true);
 		});
 
-/*
-		it('should mark "Andy" as valid', function () {
-			form.username.$setViewValue('Andy', 'input');
-			$scope.$digest();
-			expect($scope.form.$valid).toBe(true);
-		});
-
-		it('should mark "Ian" as valid', function () {
-			form.username.$setViewValue('Ian', 'input');
-			$scope.$digest();
-			expect($scope.form.$valid).toBe(true);
-		});
-
-		it('should mark "Dan" as valid', function () {
-			form.username.$setViewValue('Dan', 'input');
-			$scope.$digest();
-			expect($scope.form.$valid).toBe(true);
-		});
-
-		it('should mark "Tim" as invalid', function () {
-			form.username.$setViewValue('Tim', 'input');
-			$scope.$digest();
-			expect(form.$valid).toBe(false);
-		});
-
-		it('should not pass invalid input through to the model', function () {
-			form.username.$setViewValue('Tim', 'input');
-			$scope.$digest();
-			expect($scope.username).not.toBeDefined();
-		});
-*/
 	});
 })();
