@@ -18,9 +18,16 @@
 		.hidden {
 			display: none;
 		}
+
+		/* this doc only */
+		small {
+			font-size: .7em;
+		}
 	</style>
 </head>
 <body>
+	<base>
+
 	<h1>Accordion Demo</h1>
 
 	<h2>Mode: "first"</h2>
@@ -34,7 +41,7 @@
 	</dl>
 	<hr>
 
-	<h2>Mode: "hash"</h2>
+	<h2>Mode: "hash" <small>(Requires HTML5 mode)</small></h2>
 	<a href="#hashdemo">Click to set up hash demo.</a>
 	<dl accordion mode="hash" class="accordion">
 		<dt>A title 1</dt>
