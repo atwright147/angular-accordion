@@ -35,7 +35,7 @@ angular.module('accordion').directive('accordion', function() {
 
 				switch(attrs.mode) {
 					case 'hash':
-						urlHash = location.hash.replace('#', '');
+						var urlHash = location.hash().replace('#', '');
 						if (urlHash && _title.hasClass(urlHash)) {
 							_title.removeClass(classClosed).addClass(classOpen);
 						} else {
