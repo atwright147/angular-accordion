@@ -40,7 +40,7 @@ angular.module('accordion').directive('accordion', function() {
 							_title.removeClass(classClosed).addClass(classOpen);
 						} else {
 							_title.addClass(classClosed).removeClass(classOpen);
-		 					_desc.addClass('hidden');
+							_desc.addClass('hidden');
 						}
 						break;
 
