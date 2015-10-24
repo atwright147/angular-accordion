@@ -5,7 +5,7 @@
 */
 angular.module('accordion', []);
 
-angular.module('accordion').directive('accordion', function($location) {
+angular.module('accordion').directive('accordion', function($location, $rootScope) {
 	// Runs during compile
 	return {
 		// name: '',
@@ -35,13 +35,16 @@ angular.module('accordion').directive('accordion', function($location) {
 
 				switch(attrs.mode) {
 					case 'hash':
-						var urlHash = $location.hash().replace('#', '');
-						if (urlHash && _title.hasClass(urlHash)) {
-							_title.removeClass(classClosed).addClass(classOpen);
-						} else {
-							_title.addClass(classClosed).removeClass(classOpen);
-							_desc.addClass('hidden');
-						}
+						$rootScope.$on('$locationChangeSuccess', function (locationChangeObj, path) {
+							var urlHash = $location.hash().replace('#', '');
+							if (urlHash && _title.hasClass(urlHash)) {
+								_title.removeClass(classClosed).addClass(classOpen);
+								_desc.removeClass('hidden');
+							} else {
+								_title.addClass(classClosed).removeClass(classOpen);
+								_desc.addClass('hidden');
+							}
+						});
 						break;
 
 					case 'solo':
