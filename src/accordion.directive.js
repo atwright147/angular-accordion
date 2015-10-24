@@ -35,7 +35,7 @@ angular.module('accordion').directive('accordion', function($location, $rootScop
 
 				switch(attrs.mode) {
 					case 'hash':
-						$rootScope.$on('$locationChangeSuccess', function (locationChangeObj, path) {
+						$rootScope.$on('$locationChangeSuccess', function() {
 							var urlHash = $location.hash().replace('#', '');
 							if (urlHash && _title.hasClass(urlHash)) {
 								_title.removeClass(classClosed).addClass(classOpen);
