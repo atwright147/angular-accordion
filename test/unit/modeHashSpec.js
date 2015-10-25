@@ -53,17 +53,17 @@
 		it('should initially set all except item with class that matches "hashdemo" to be in "open" state.', function() {
 			$location.hash('hashdemo');
 			$scope.$apply();
-			console.log(el[0].innerHTML, $scope, $location.hash());
-			// first item
+
+			// item with class matching hash
 			expect(angular.element(dt[2]).hasClass('open')).toBe(true);
-			// expect(angular.element(dt[2]).hasClass('closed')).toBe(false);
-			// expect(angular.element(dd[2]).hasClass('hidden')).toBe(false);
+			expect(angular.element(dt[2]).hasClass('closed')).toBe(false);
+			expect(angular.element(dd[2]).hasClass('hidden')).toBe(false);
 
 			// other items
-			// expect(angular.element(dt[0]).hasClass('closed')).toBe(true);
-			// expect(angular.element(dd[0]).hasClass('hidden')).toBe(true);
-			// expect(angular.element(dt[1]).hasClass('closed')).toBe(true);
-			// expect(angular.element(dd[1]).hasClass('hidden')).toBe(true);
+			expect(angular.element(dt[0]).hasClass('closed')).toBe(true);
+			expect(angular.element(dd[0]).hasClass('hidden')).toBe(true);
+			expect(angular.element(dt[1]).hasClass('closed')).toBe(true);
+			expect(angular.element(dd[1]).hasClass('hidden')).toBe(true);
 		});
 
 	});
