@@ -46,7 +46,7 @@
 
 
 
-		it('should initialise with first item open and others closed', function() {
+		it('should initialise with first item open and others closed.', function() {
 			// first item
 			expect(angular.element(dt[0]).hasClass('open')).toBe(true);
 			expect(angular.element(dt[0]).hasClass('closed')).toBe(false);
@@ -59,7 +59,7 @@
 			expect(angular.element(dd[2]).hasClass('hidden')).toBe(true);
 		});
 
-		it('should close the first item when it\'s title is clicked', function() {
+		it('should close the first item when it\'s title is clicked.', function() {
 			// check classes before clicking
 			expect(angular.element(dt[0]).hasClass('open')).toBe(true);
 			expect(angular.element(dt[0]).hasClass('closed')).toBe(false);
@@ -74,7 +74,7 @@
 			expect(angular.element(dd[0]).hasClass('hidden')).toBe(true);
 		});
 
-		it('should open an item when it\'s title is clicked', function() {
+		it('should open an item when it\'s title is clicked.', function() {
 			// check classes before clicking
 			expect(angular.element(dt[2]).hasClass('closed')).toBe(true);
 			expect(angular.element(dt[2]).hasClass('open')).toBe(false);
