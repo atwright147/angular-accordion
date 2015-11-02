@@ -89,5 +89,22 @@
 			expect(angular.element(dd[2]).hasClass('hidden')).toBe(false);
 		});
 
+		it('* should invert state of each item when clicked.', function() {
+			angular.forEach(dt, function(item, index) {
+				item = angular.element(dt[index]);
+				var initialClass = item.attr('class');
+
+				item[0].dispatchEvent(clickEvent);
+
+				if (initialClass.indexOf('open') > -1) {
+					expect(item.hasClass('closed')).toBe(true);
+					expect(angular.element(dd[index]).hasClass('hidden')).toBe(true);
+				} else {
+					expect(item.hasClass('open')).toBe(true);
+					expect(angular.element(dd[index]).hasClass('hidden')).toBe(false);
+				}
+			});
+		});
+
 	});
 })();
