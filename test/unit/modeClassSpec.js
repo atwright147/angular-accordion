@@ -1,7 +1,7 @@
 (function() {
 	'use strict';
 
-	describe('Accordion with mode set to "hash"', function () {
+	describe('Accordion with mode set to "class"', function () {
 		var el, $compile, $rootScope, $scope;
 		var dt, dd, clickEvent;
 
