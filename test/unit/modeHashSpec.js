@@ -31,7 +31,8 @@
 			$compile(el)($scope);
 
 			// Run all the watches on the current scope
-			$scope.$digest();
+			$location.hash('hashdemo');
+			$scope.$apply();
 		}));
 
 		beforeEach(function() {
@@ -50,10 +51,7 @@
 // it('should change css classes of target <dt> and child <dd> to inverse of current when target <dt> is clicked.', function() {
 
 
-		it('should initially set all except item with class that matches "hashdemo" to be in "open" state.', function() {
-			$location.hash('hashdemo');
-			$scope.$apply();
-
+		it('should initially set all except item with class that matches "hashdemo" to be in "closed" state.', function() {
 			// item with class matching hash
 			expect(angular.element(dt[2]).hasClass('open')).toBe(true);
 			expect(angular.element(dt[2]).hasClass('closed')).toBe(false);
@@ -64,6 +62,23 @@
 			expect(angular.element(dd[0]).hasClass('hidden')).toBe(true);
 			expect(angular.element(dt[1]).hasClass('closed')).toBe(true);
 			expect(angular.element(dd[1]).hasClass('hidden')).toBe(true);
+		});
+
+		it('* should invert state of each item when clicked.', function() {
+			angular.forEach(dt, function(item, index) {
+				item = angular.element(dt[index]);
+				var initialClass = item.attr('class');
+
+				item[0].dispatchEvent(clickEvent);
+
+				if (initialClass.indexOf('open') > -1) {
+					expect(item.hasClass('closed')).toBe(true);
+					expect(angular.element(dd[index]).hasClass('hidden')).toBe(true);
+				} else {
+					expect(item.hasClass('open')).toBe(true);
+					expect(angular.element(dd[index]).hasClass('hidden')).toBe(false);
+				}
+			});
 		});
 
 	});

@@ -1,7 +1,7 @@
 (function() {
 	'use strict';
 
-	describe('Accordion with mode set to "hash"', function () {
+	describe('Accordion with mode set to "class"', function () {
 		var el, $compile, $rootScope, $scope;
 		var dt, dd, clickEvent;
 
@@ -57,14 +57,14 @@
 			expect(angular.element(dd[2]).hasClass('hidden')).toBe(true);
 		});
 
-		it('should invert state of each item when clicked.', function() {
+		it('* should invert state of each item when clicked.', function() {
 			angular.forEach(dt, function(item, index) {
-				var item = angular.element(dt[index]);
+				item = angular.element(dt[index]);
 				var initialClass = item.attr('class');
 
 				item[0].dispatchEvent(clickEvent);
 
-				if (initialClass == 'open') {
+				if (initialClass.indexOf('open') > -1) {
 					expect(item.hasClass('closed')).toBe(true);
 					expect(angular.element(dd[index]).hasClass('hidden')).toBe(true);
 				} else {
