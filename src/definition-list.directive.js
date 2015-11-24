@@ -1,11 +1,3 @@
-angular.module('accordion').controller('FaqController', function($scope){
-	$scope.myContent = [
-		{title: 'Title 01', desc: 'Description 01', attributes: {'class': 'open', 'id': 'first'}},
-		{title: 'Title 02', desc: 'Description 02'},
-		{title: 'Title 03', desc: 'Description 03'}
-	];
-});
-
 angular.module('accordion').directive('definitionList', function(){
 	// Runs during compile
 	return {
@@ -44,7 +36,7 @@ angular.module('accordion').directive('definitionList', function(){
 				list.append(title);
 				list.append(desc);
 			});
-			
+
 			// append the definition list into the page
 			elem.append(list);
 		}

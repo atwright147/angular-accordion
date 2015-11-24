@@ -76,7 +76,7 @@
 
 	<h2>Definition List Generator</h2>
 	<div ng-controller="FaqController">
-		<definition-list content="myContent" accordion></definition-list>
+		<definition-list content="myContent" accordion class="accordion"></definition-list>
 	</div>
 	
 	<script src="./bower_components/angular/angular.js"></script>
@@ -84,5 +84,14 @@
 	<script src="./src/accordion.directive.js"></script>
 	<script src="./src/definition-list.directive.js"></script>
 	<script src="./app.js"></script>
+	<script>
+		angular.module('app').controller('FaqController', function($scope){
+			$scope.myContent = [
+				{title: 'Title 01', desc: 'Description 01', attributes: {'class': 'open', 'id': 'first'}},
+				{title: 'Title 02', desc: 'Description 02'},
+				{title: 'Title 03', desc: 'Description 03'}
+			];
+		});
+	</script>
 </body>
 </html>
