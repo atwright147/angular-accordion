@@ -1,10 +1,3 @@
-/**
-* Accordion Module
-*
-* Description
-*/
-angular.module('accordion', []);
-
 angular.module('accordion').directive('accordion', function($location, $rootScope) {
 	// Runs during compile
 	return {
