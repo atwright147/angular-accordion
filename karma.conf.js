@@ -15,11 +15,13 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-      './bower_components/angular/angular.min.js',
+      './bower_components/angular/angular.js',
       './bower_components/angular-mocks/angular-mocks.js',
       './app.js',
-      './src/*.js',
-      './test/unit/*Spec.js'
+      './src/accordion.module.js',
+      './src/accordion.directive.js',
+      './src/definition-list.directive.js',
+      './test/unit/*.spec.js'
     ],
 
 
