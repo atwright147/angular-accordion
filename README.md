@@ -45,12 +45,14 @@ Create appropriate HTML:
 
 * To use hash mode, you will need to ensure that Angular is in `html5mode`. To make that happen, add the following snippet to your app:
 
-    angular.module('app').config(function($locationProvider) {
-        $locationProvider.html5Mode({
-            enabled: true,
-            requireBase: false
-        });
+```js
+angular.module('app').config(function($locationProvider) {
+    $locationProvider.html5Mode({
+        enabled: true,
+        requireBase: false
     });
+});
+```
 
 ### Examples
 
