@@ -95,6 +95,9 @@ angular.module('accordion').directive('accordion', function($location, $rootScop
 					allDd.addClass('hidden');
 				}
 
+				// the use of hasClass() here is a bit of a hack caused by jQlite's lack of a .is(':visible') selector
+				// whilst not ideal, it does seem to work and unless a compelling reason to implement
+				// a custom is visible selector is presented I will stick with it
 				if (_title.hasClass(classOpen)) {
 					// accordion tab is open
 					_title.removeClass(classOpen).addClass(classClosed);
