@@ -38,10 +38,10 @@ Create appropriate HTML:
 
 ### Pick a Mode (choose what gets opened by default)
 
-- class - any `<dt>` with the class "open" will be open by default (`<dt class="open">Heading</dt>`); all other will be closed.
-- first - the first item in the accordion will be open; all other will be closed.
-- solo - like a classic accordion, only one item can be open at a time, the first item will be open by default; all other will be closed.
-- hash * - any `<dt>` with a class which matches the address hash will be open by default; all other will be closed.
+- **class** - any `<dt>` with the class "open" will be open by default (`<dt class="open">Heading</dt>`); all other will be closed.
+- **first** - the first item in the accordion will be open; all other will be closed.
+- **solo** - like a classic accordion, only one item can be open at a time, the first item will be open by default; all other will be closed.
+- **hash** * - any `<dt>` with a class which matches the address hash will be open by default; all other will be closed.
 
 * To use hash mode, you will need to ensure that Angular is in `html5mode`. To make that happen, add the following snippet to your app:
 
